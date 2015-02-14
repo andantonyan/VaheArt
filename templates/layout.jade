@@ -1,0 +1,34 @@
+| {% load staticfiles %}
+doctype html
+html
+	head
+		title VaheArt
+		meta(http-equiv="content-type", content="text/html; charset=utf-8")
+		meta(name="description", content="")
+		meta(name="keywords", content="")
+		//if lte IE 8
+			script(src="{% static 'home/css/ie/html5shiv.js' %}")
+		script(src="{% static 'home/js/jquery.min.js' %}")
+		script(src="{% static 'home/js/jquery.poptrox.min.js' %}")
+		script(src="{% static 'home/js/jquery.scrolly.min.js' %}")
+		script(src="{% static 'home/js/jquery.scrollgress.min.js' %}")
+		script(src="{% static 'home/js/skel.min.js' %}")
+		script(src="{% static 'home/js/modernizr.custom.js' %}")
+		script(src="{% static 'home/js/classie.js' %}")
+		script(src="{% static 'home/js/gallery.min.js' %}")
+		script(src="{% static 'home/js/init.js' %}")
+		script(src="{% static 'home/js/script.js' %}")
+
+		noscript
+			link(rel="stylesheet", href="{% static 'home/css/skel.css' %}")
+			link(rel="stylesheet", href="{% static 'home/css/style.css' %}")
+			link(rel="stylesheet", href="{% static 'home/css/style-wide.css' %}")
+			link(rel="stylesheet", href="{% static 'home/css/style-normal.css' %}")
+		//if lte IE 8
+			link(rel="stylesheet", href="{% static 'home/css/ie/v8.css' %}")
+
+		link(rel="stylesheet", type="text/css", href="{% static 'home/css/elastic_grid.css' %}")
+		link(rel="shortcut icon", href="{% static 'home/icons/favicon.ico' %}")
+	body
+		| {% block content %}
+		| {% endblock content %}

@@ -1,0 +1,101 @@
+{% extends "layout.jade" %}
+
+{% block content %}
+style
+	#intro {
+		background: url('/media/{{intro.background}}');
+	}
+	#biography {
+		background: url('/media/{{biography.background}}');
+	}
+	/*
+	#contact {
+		background: url('/media/{{contact.background}}');
+	}
+	*/
+
+
+// Header
+header#header
+	// Logo
+	h1#logo VaheArt
+	// Nav
+	nav#nav
+		ul
+			li
+				a(href="#intro") Intro
+			li
+				a(href="#biography") Biography
+			li
+				a(href="#work") Gallery
+			//- li
+				a(href="#contact") Contact
+
+section#intro.main.style1.dark.fullscreen
+	.content.container.small
+		header.top20
+			h2 {{ intro.header }}
+		p {{ intro.content }}
+		footer
+			a.button.style2.down(href="#biography") More
+
+section#biography.main.style2.left.dark.fullscreen
+	.content.box.style2
+		header
+			h2 {{ biography.header }}
+		p {{ biography.content }}			
+	a.button.style2.down.anchored(href="#work") Next
+
+section#work.main.style3.primary
+	.content.container
+		.galery
+
+//section#contact.main.style3.secondary
+	.content.container
+		header
+			h2 {{ contact.header }}
+			p {{ contact.content }}
+		.box.container.small
+			form(method="post", action="/ajax/send-email")
+				.row.half
+					.6u
+						input(type="text", name="name", placeholder="Name")
+					.6u
+						input(type="email", name="email", placeholder="Email")
+				.row.half
+					.12u
+						textarea(name="message", placeholder="Message", rows="6")
+				.row
+					.12u
+						ul.actions
+							li
+								input(type="submit", value="Send Message")
+// Footer
+footer#footer
+	// Icons
+	ul.actions
+		//- li
+		//- 	a.icon.fa-twitter(href="#")
+		//- 		span.label Twitter
+		li
+			a.icon.fa-facebook(href="https://www.facebook.com/pages/Vahe-Hakobyan-Art/314435528676625?ref=br_rs")
+				span.label Facebook
+		//- li
+		//- 	a.icon.fa-google-plus(href="#")
+		//- 		span.label Google+
+		//- li
+		//- 	a.icon.fa-dribbble(href="#")
+		//- 		span.label Dribbble
+		//- li
+		//- 	a.icon.fa-pinterest(href="#")
+		//- 		span.label Pinterest
+		//- li
+		//- 	a.icon.fa-instagram(href="#")
+		//- 		span.label Instagram
+	// Menu
+	ul.menu
+		li &#169; VaheArt
+		li
+			| Developed by: 
+			a(href="mailto:andantonyan@gmail.com") Andranik Antonyan
+| {% endblock content %}
